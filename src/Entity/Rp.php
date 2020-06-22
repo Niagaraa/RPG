@@ -42,10 +42,17 @@ class Rp
      */
     private $isEvent;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity=Character::class, inversedBy="rps")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $character_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Forum::class, inversedBy="rps")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $forum_id;
 
     public function getTitle(): ?string
     {
@@ -111,6 +118,30 @@ class Rp
     public function setIsEvent(bool $isEvent): self
     {
         $this->isEvent = $isEvent;
+
+        return $this;
+    }
+
+    public function getCharacterId(): ?Character
+    {
+        return $this->character_id;
+    }
+
+    public function setCharacterId(?Character $character_id): self
+    {
+        $this->character_id = $character_id;
+
+        return $this;
+    }
+
+    public function getForumId(): ?Forum
+    {
+        return $this->forum_id;
+    }
+
+    public function setForumId(?Forum $forum_id): self
+    {
+        $this->forum_id = $forum_id;
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CharacterRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,6 +31,16 @@ class Character
      */
     private $forum;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Rp::class, mappedBy="character_id", orphanRemoval=true)
+     */
+    private $rps;
+
+    public function __construct()
+    {
+        $this->rps = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,6 +66,37 @@ class Character
     public function setForum(?Forum $forum): self
     {
         $this->forum = $forum;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Rp[]
+     */
+    public function getRps(): Collection
+    {
+        return $this->rps;
+    }
+
+    public function addRp(Rp $rp): self
+    {
+        if (!$this->rps->contains($rp)) {
+            $this->rps[] = $rp;
+            $rp->setCharacterId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRp(Rp $rp): self
+    {
+        if ($this->rps->contains($rp)) {
+            $this->rps->removeElement($rp);
+            // set the owning side to null (unless already changed)
+            if ($rp->getCharacterId() === $this) {
+                $rp->setCharacterId(null);
+            }
+        }
 
         return $this;
     }

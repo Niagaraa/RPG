@@ -39,9 +39,15 @@ class Forum
      */
     private $characters;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Rp::class, mappedBy="forum_id", orphanRemoval=true)
+     */
+    private $rps;
+
     public function __construct()
     {
         $this->characters = new ArrayCollection();
+        $this->rps = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -110,6 +116,37 @@ class Forum
             // set the owning side to null (unless already changed)
             if ($character->getForum() === $this) {
                 $character->setForum(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Rp[]
+     */
+    public function getRps(): Collection
+    {
+        return $this->rps;
+    }
+
+    public function addRp(Rp $rp): self
+    {
+        if (!$this->rps->contains($rp)) {
+            $this->rps[] = $rp;
+            $rp->setForumId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRp(Rp $rp): self
+    {
+        if ($this->rps->contains($rp)) {
+            $this->rps->removeElement($rp);
+            // set the owning side to null (unless already changed)
+            if ($rp->getForumId() === $this) {
+                $rp->setForumId(null);
             }
         }
 
