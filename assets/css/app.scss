@@ -1,7 +1,24 @@
 @import "vars";
 @import "~bootstrap/scss/bootstrap";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+//@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+//@import '~@fortawesome/fontawesome-free/scss/brands';
 @import "navbar";
+@import "form";
+
+html {
+    height: 100%;
+}
 
 body {
+    height: 100%;
     background-color: $light;
+    font-family: $main-font;
+    padding-top: 7rem;
+}
+
+h1 {
+    font-family: $title-font;
+    padding: 2rem 0;
 }
