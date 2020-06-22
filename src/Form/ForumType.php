@@ -15,23 +15,14 @@ class ForumType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Nom du forum',
-//                'label_attr' => [
-//                    'class' => 'w-25'
-//                ]
             ])
             ->add('address', TextType::class, [
                 'label' => 'Adresse du forum',
                 'required' => false,
-//                'label_attr' => [
-//                    'class' => 'w-25'
-//                ]
             ])
             ->add('button', TextType::class, [
                 'label' => 'Bouton de partenariat',
                 'required' => false,
-//                'label_attr' => [
-//                    'class' => 'w-25'
-//                ]
             ]);
     }
 

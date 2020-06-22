@@ -22,7 +22,7 @@
                 <td>{{ forum.name }}</td>
                 <td>{{ forum.address }}</td>
                 <td>{{ forum.button }}</td>
-                <td>
+                <td class="d-flex">
                     <a href="{{ path('forum_show', {'id': forum.id}) }}">show</a>
                     <a href="{{ path('forum_edit', {'id': forum.id}) }}" class="btn btn-primary"><span uk-icon="pencil"></span></a>
                     {{ include('forum/_delete_form.html.twig') }}

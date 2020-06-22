@@ -44,12 +44,6 @@ class Forum
      */
     private $rps;
 
-    public function __construct()
-    {
-        $this->characters = new ArrayCollection();
-        $this->rps = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
