@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Character;
 use App\Form\CharacterType;
 use App\Repository\CharacterRepository;
+use DateTimeZone;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,8 +21,20 @@ class CharacterController extends AbstractController
      */
     public function index(CharacterRepository $characterRepository): Response
     {
+        $characters = $characterRepository->findAll();
+
+        foreach ($characters as $character) {
+
+            if($character->getBirthday()) {
+                $today = new \DateTime('now');
+                $birthday = $character->getBirthday();
+                $old = date_diff($today, $birthday)->format('%y');
+            }
+        }
+
         return $this->render('character/index.html.twig', [
-            'characters' => $characterRepository->findAll(),
+            'characters' => $characters,
+            'old' => $old
         ]);
     }
 
@@ -83,7 +96,7 @@ class CharacterController extends AbstractController
      */
     public function delete(Request $request, Character $character): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$character->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $character->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($character);
             $entityManager->flush();

@@ -11,7 +11,7 @@
       display: flex;
     }
 
-    label {
+    label, legend {
       width: 25%;
     }
 
@@ -31,6 +31,11 @@
       margin: auto;
       display: flex;
       margin-top:1rem;
+    }
+
+    .form-inline {
+      margin-left: 20%;
+      margin-top:-2.3rem;
     }
 
   }

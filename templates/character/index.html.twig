@@ -34,12 +34,15 @@
                     </td>
                     <td>{{ character.name }} <br>
                         {% if character.avatar is not empty %}
-{#                            <span class="face-claim">#}
-                                ({{ character.avatar }})
-{#                            </span>#}
+                            ({{ character.avatar }})
                         {% endif %}
                     </td>
-                    <td>{{ character.birthday }}</td>
+                    <td>
+                        {% if character.birthday is not empty %}
+                            {{ old }} ans <br>
+                            {{ character.birthday|date('d / m / Y') }}
+                        {% endif %}
+                    </td>
                     <td>{{ character.forum.name }}</td>
                     <td>
                         <a href="{{ path('character_show', {'id': character.id}) }}">show</a>
