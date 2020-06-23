@@ -1,5 +1,5 @@
 .index {
-  @include bg-main;
+  @include bg-main();
   padding-bottom: 2rem;
 
   .btn {
