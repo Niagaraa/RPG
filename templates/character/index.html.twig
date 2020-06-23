@@ -21,6 +21,7 @@
             <tr>
                 <th></th>
                 <th>Nom</th>
+                <th>Âge</th>
                 <th>Forum</th>
                 <th>Actions</th>
             </tr>
@@ -28,8 +29,20 @@
             <tbody>
             {% for character in characters %}
                 <tr>
-                    <td>{{ loop.index }}</td>
-                    <td>{{ character.name }}</td>
+                    <td>{{ loop.index }}
+                        <img src="{{ character.picture }}" class="avatar">
+                    </td>
+                    <td>{{ character.name }} <br>
+                        {% if character.avatar is not empty %}
+                            ({{ character.avatar }})
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if character.birthday is not empty %}
+                            {{ old }} ans <br>
+                            {{ character.birthday|date('d / m / Y') }}
+                        {% endif %}
+                    </td>
                     <td>{{ character.forum.name }}</td>
                     <td>
                         <a href="{{ path('character_show', {'id': character.id}) }}">show</a>

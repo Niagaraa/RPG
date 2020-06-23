@@ -22,17 +22,32 @@
 
   tbody {
     tr {
-      td:nth-child(2) {
-        font-weight: bold;
-      }
-    }
 
-    tr {
-      td:last-child {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      td {
+        vertical-align: middle;
+      }
+
+      td:nth-child(2):first-line {
+          font-weight: bold;
+      }
+
+      tr {
+        td:last-child {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
+  }
+
+  .avatar {
+    height: $avatar-height/2.5;
+    width: $avatar-width/2.5;
+    margin-left: 1rem;
+  }
+
+  .face-claim {
+    font-weight: 200;
   }
 }
