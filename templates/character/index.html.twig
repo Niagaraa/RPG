@@ -21,7 +21,6 @@
             <tr>
                 <th></th>
                 <th>Nom</th>
-                <th>Avatar</th>
                 <th>Âge</th>
                 <th>Forum</th>
                 <th>Actions</th>
@@ -31,10 +30,15 @@
             {% for character in characters %}
                 <tr>
                     <td>{{ loop.index }}
-                        <img src="{{ character.picture }}">
+                        <img src="{{ character.picture }}" class="avatar">
                     </td>
-                    <td>{{ character.name }}</td>
-                    <td>{{ character.avatar }}</td>
+                    <td>{{ character.name }} <br>
+                        {% if character.avatar is not empty %}
+{#                            <span class="face-claim">#}
+                                ({{ character.avatar }})
+{#                            </span>#}
+                        {% endif %}
+                    </td>
                     <td>{{ character.birthday }}</td>
                     <td>{{ character.forum.name }}</td>
                     <td>

@@ -18,6 +18,11 @@ class CharacterType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Nom du personnage'
             ])
+            ->add('avatar')
+            ->add('picture', TextType::class, [
+                'label' => 'URL d\'un avatar',
+                'required' => false
+            ])
             ->add('forum', EntityType::class, [
                 'class' => Forum::class,
                 'choice_label' => 'name',
