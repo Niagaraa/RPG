@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Character;
 use App\Form\CharacterType;
 use App\Repository\CharacterRepository;
-use DateTimeZone;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
