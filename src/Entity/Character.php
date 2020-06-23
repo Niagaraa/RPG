@@ -36,6 +36,21 @@ class Character
      */
     private $rps;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $avatar;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $picture;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $birthday;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -92,6 +107,42 @@ class Character
                 $rp->setCharacterId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAvatar(): ?string
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar(string $avatar): self
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getBirthday(): ?\DateTimeInterface
+    {
+        return $this->birthday;
+    }
+
+    public function setBirthday(?\DateTimeInterface $birthday): self
+    {
+        $this->birthday = $birthday;
 
         return $this;
     }
