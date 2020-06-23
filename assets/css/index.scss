@@ -22,6 +22,12 @@
 
   tbody {
     tr {
+      td:nth-child(2) {
+        font-weight: bold;
+      }
+    }
+
+    tr {
       td:last-child {
         display: flex;
         justify-content: center;

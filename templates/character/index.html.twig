@@ -29,7 +29,7 @@
             {% for character in characters %}
                 <tr>
                     <td>{{ loop.index }}</td>
-                    <td><strong>{{ character.name }}</strong></td>
+                    <td>{{ character.name }}</td>
                     <td>{{ character.forum.name }}</td>
                     <td>
                         <a href="{{ path('character_show', {'id': character.id}) }}">show</a>
