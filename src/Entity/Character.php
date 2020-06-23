@@ -36,11 +36,6 @@ class Character
      */
     private $rps;
 
-    public function __construct()
-    {
-        $this->rps = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;

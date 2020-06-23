@@ -33,7 +33,7 @@
                     <td>{{ forum.name }}</td>
                     <td>{{ forum.address }}</td>
                     <td><img src="{{ forum.button }}"></td>
-                    <td class="d-flex">
+                    <td>
                         <a href="{{ path('forum_show', {'id': forum.id}) }}" class="m-1">show</a>
                         <a href="{{ path('forum_edit', {'id': forum.id}) }}" class="m-1 btn btn-primary">
                             <span uk-icon="pencil"></span>
@@ -50,4 +50,5 @@
         </table>
 
     </div>
+
 {% endblock %}
