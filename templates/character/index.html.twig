@@ -21,6 +21,8 @@
             <tr>
                 <th></th>
                 <th>Nom</th>
+                <th>Avatar</th>
+                <th>Âge</th>
                 <th>Forum</th>
                 <th>Actions</th>
             </tr>
@@ -28,8 +30,12 @@
             <tbody>
             {% for character in characters %}
                 <tr>
-                    <td>{{ loop.index }}</td>
+                    <td>{{ loop.index }}
+                        <img src="{{ character.picture }}">
+                    </td>
                     <td>{{ character.name }}</td>
+                    <td>{{ character.avatar }}</td>
+                    <td>{{ character.birthday }}</td>
                     <td>{{ character.forum.name }}</td>
                     <td>
                         <a href="{{ path('character_show', {'id': character.id}) }}">show</a>
