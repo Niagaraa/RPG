@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer un Forum{% endblock %}
+
+{% block body %}
+
+    <div class="container form">
+        <a href="{{ path('forum_index') }}" class="btn btn-light">
+            <span uk-icon="reply"></span> Retour aux forums
+        </a>
+
+        <div class="icon rounded-circle bg-primary">
+            <i class="fas fa-pen"></i>
+        </div>
+
+        <h1>Editer un Forum</h1>
+
+        {{ include('forum/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+        {% include '_note.html.twig' %}
+    </div>
+{% endblock %}

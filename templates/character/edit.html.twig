@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer un personnage{% endblock %}
+
+{% block body %}
+
+    <div class="container form">
+
+        <a href="{{ path('character_index') }}" class="btn btn-light">
+            <span uk-icon="reply"></span> Retour aux personnages
+        </a>
+
+        <div class="icon rounded-circle bg-primary">
+            <i class="fas fa-pen"></i>
+        </div>
+
+        <h1>Editer un personnage</h1>
+
+        {{ include('character/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+        {% include '_note.html.twig' %}
+
+    </div>
+
+{% endblock %}
