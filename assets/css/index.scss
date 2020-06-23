@@ -1,0 +1,22 @@
+.index {
+  @include bg-main;
+  padding-bottom: 2rem;
+
+  .btn {
+    display: flex;
+    width: max-content;
+    align-items: center;
+  }
+
+  .table {
+    width: 90%;
+    margin: auto;
+  }
+
+  thead {
+    th {
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}

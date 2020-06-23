@@ -18,3 +18,36 @@ $secondary:#F3CED5;
 
 $title-font: 'Cinzel Decorative', cursive;
 $main-font: 'Lato', sans-serif;
+
+// Mixins
+
+@mixin bg-main() {
+  background-color: $lightest;
+  padding: 1rem 0 1rem 0;
+  width: 60%;
+  border-radius: 2px;
+  box-shadow: 0 0 5px 1px darken($light, 5%);
+
+  .btn-light {
+    margin-left: 1rem;
+    display: flex;
+    width: max-content;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  $icon-size: 10rem;
+
+  .icon {
+    height: $icon-size;
+    width: $icon-size;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: $lightest;
+  }
+}

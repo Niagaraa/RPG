@@ -1,33 +1,5 @@
 .form {
-
-  background-color: $lightest;
-  padding: 1rem 0 1rem 0;
-  width: 60%;
-  border-radius: 2px;
-  box-shadow: 0 0 5px 1px darken($light, 5%);
-
-  .btn-light {
-    margin-left: 1rem;
-    display: flex;
-    width: max-content;
-  }
-
-  $icon-size: 10rem;
-
-  .icon {
-    height: $icon-size;
-    width: $icon-size;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    color:$lightest;
-  }
-
-  h1 {
-    text-align: center;
-  }
+  @include bg-main();
 
   form {
 
@@ -49,7 +21,7 @@
 
     .required:after {
       content: '*';
-      color:red;
+      color: red;
       padding-left: 0.2rem;
       font-size: 1.3rem;
     }
