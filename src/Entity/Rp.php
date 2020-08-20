@@ -46,13 +46,23 @@ class Rp
      * @ORM\ManyToOne(targetEntity=Character::class, inversedBy="rps")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $character_id;
+    private $character;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Forum::class, inversedBy="rps")
-     * @ORM\JoinColumn(nullable=false)
+     * @return mixed
      */
-    private $forum_id;
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
     public function getTitle(): ?string
     {
@@ -122,27 +132,19 @@ class Rp
         return $this;
     }
 
-    public function getCharacterId(): ?Character
+    /**
+     * @return mixed
+     */
+    public function getCharacter()
     {
-        return $this->character_id;
+        return $this->character;
     }
 
-    public function setCharacterId(?Character $character_id): self
+    /**
+     * @param mixed $character
+     */
+    public function setCharacter($character): void
     {
-        $this->character_id = $character_id;
-
-        return $this;
-    }
-
-    public function getForumId(): ?Forum
-    {
-        return $this->forum_id;
-    }
-
-    public function setForumId(?Forum $forum_id): self
-    {
-        $this->forum_id = $forum_id;
-
-        return $this;
+        $this->character = $character;
     }
 }

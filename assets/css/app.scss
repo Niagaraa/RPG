@@ -8,14 +8,13 @@
 @import "index";
 @import "form";
 
-html {
-    min-height: 100%;
-}
-
-body {
+html, body {
     min-height: 100%;
     background-color: $light;
     font-family: $main-font;
+}
+
+body {
     padding-top: 7rem;
 }
 

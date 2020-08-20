@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau RP{% endblock %}
+
+{% block body %}
+    <div class="container form">
+
+        <a class="btn btn-light" href="{{ path('rp_index') }}">
+            <span uk-icon="reply"></span> Retour aux RPs
+        </a>
+
+        <div class="icon bg-primary rounded-circle">
+            <i class="fas fa-feather"></i>
+        </div>
+
+        <h1>Ajouter un RP</h1>
+
+        {{ include('rp/_form.html.twig') }}
+
+        {{ include('_note.html.twig') }}
+
+    </div>
+{% endblock %}
