@@ -147,5 +147,4 @@ class Rp
     {
         $this->character = $character;
     }
-
 }
