@@ -49,12 +49,6 @@ class Rp
     private $character;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Forum::class, inversedBy="rps")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $forum;
-
-    /**
      * @return mixed
      */
     public function getId()
@@ -152,22 +146,6 @@ class Rp
     public function setCharacter($character): void
     {
         $this->character = $character;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getForum()
-    {
-        return $this->forum;
-    }
-
-    /**
-     * @param mixed $forum
-     */
-    public function setForum($forum): void
-    {
-        $this->forum = $forum;
     }
 
 }
