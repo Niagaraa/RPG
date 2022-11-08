@@ -794,7 +794,7 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.13.1.tgz#c53b4066edae16cd1fd669f687baf031b45fb9d6"
   integrity sha512-D819f34FLHeBN/4xvw0HR0u7U2G7RqjPSggXqf7LktsxWQ48VAfGwvMrhcVuaZV2fF069c/619RdgCCms0DHhw==
 
-"@symfony/webpack-encore@^0.30.0":
+"@symfony/webpack-encore@^0.30.2":
   version "0.30.2"
   resolved "https://registry.yarnpkg.com/@symfony/webpack-encore/-/webpack-encore-0.30.2.tgz#8f9e871f2ec9ac43bad93e835d447670b6650de3"
   integrity sha512-fJGPnNJ69/FrRcIRluqk5grO4R0ZmXU1n3TyplOjjXv9nuLTA8ljvhk/sMAs/WMri4vb1ZdWwcT5sPw1pmYZdA==
